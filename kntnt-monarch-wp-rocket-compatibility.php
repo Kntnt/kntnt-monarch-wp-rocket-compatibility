@@ -20,8 +20,8 @@ new Plugin();
 
 final class Plugin {
 
-  static $file;
-  
+  private $file;
+
   public function __construct() {
 
     $wp_dir = rtrim( strtr( ABSPATH, '\\', '/' ) , '/');
@@ -33,7 +33,7 @@ final class Plugin {
     add_filter( 'rocket_exclude_cache_busting', [ $this, 'exclude' ] );
 
   }
-  
+
   public function exclude( $exclude_files ) {
     $exclude_files[] = $this->file;
     return $exclude_files;
