@@ -34,7 +34,7 @@ final class Plugin {
 
     }
 
-    private function exclude($exclude_files) {
+    public function exclude($exclude_files) {
         $exclude_files[] = $this->file;
         return $exclude_files;
     }
